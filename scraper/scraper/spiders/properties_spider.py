@@ -3,7 +3,7 @@ from scrapy.spiders import Rule
 from scrapy.linkextractors import LinkExtractor
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import TakeFirst
-
+import re
 from scraper.scraper.items import ScraperItem
 
 
@@ -16,7 +16,7 @@ class PropertiesSpider(CrawlSpider):
 
     rules = (
         Rule(
-            LinkExtractor(allow=("HouseDetails\.aspx")),
+            LinkExtractor(allow=("")),
             callback="parse_property",
             follow=True,
         ),
@@ -27,28 +27,28 @@ class PropertiesSpider(CrawlSpider):
         property_loader.default_output_processor = TakeFirst()
 
         property_loader.add_css(
-            "price", "span#ContentPlaceHolder1_DetailsFormView_Shillings::text"
+            "price", "available-card__content"
         )
         property_loader.add_css(
-            "start_location", "span#ContentPlaceHolder1_DetailsFormView_LocationLabel::text"
+            "start_location", "available-card__content"
         )
         property_loader.add_css(
-            "landing_location", "span#ContentPlaceHolder1_DetailsFormView_LocationLabel::text"
+            "landing_location", "available-card__content"
         )
         property_loader.add_css(
-            "status", "span#ContentPlaceHolder1_DetailsFormView_StatusLabel::text"
+            "status", "available-card__content"
         )
         property_loader.add_css(
-            "category", "span#ContentPlaceHolder1_DetailsFormView_CategoryLabel::text"
+            "category", "available-card__content"
         )
         property_loader.add_css(
-            "airline_company", "span#ContentPlaceHolder1_FormView1_CompanyLabel::text"
+            "airline_company", "available-card__content"
         )
         property_loader.add_css(
-            "landing_date", "span#ContentPlaceHolder1_FormView1_CompanyLabel::text"
+            "landing_date", "available-card__content"
         )
         property_loader.add_css(
-            "flying_date", "span#ContentPlaceHolder1_FormView1_CompanyLabel::text"
+            "flying_date", "available-card__content"
         )        
 
         yield property_loader.load_item()
