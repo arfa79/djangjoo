@@ -27,28 +27,28 @@ class PropertiesSpider(CrawlSpider):
         property_loader.default_output_processor = TakeFirst()
 
         property_loader.add_css(
-            "price", "text-secondary-400"
+            "price", "span.text-6.block.mt-2[data-v-1bed6fc4][data-v-661aad36]::text"
         )
         property_loader.add_css(
-            "start_location", "margin-left: 0.5rem"
+            "start_location", "span[style=margin-left: 0.5rem;]::text"
         )
         property_loader.add_css(
-            "landing_location", "margin-left: 0.5rem"
+            "landing_location", "span[style=margin-left: 0.5rem;]::text"
         )
         property_loader.add_css(
-            "status", "flex flex-col text-2 mt-1 text-danger-400"
+            "status", "span[data-v-661aad36]::text"
         )
         property_loader.add_css(
-            "category", "a-card available-card is-disabled flex mb-3 md:mb-4 cards-flip-item last:mb-0"
+            "category", "h3.md:text-5.text-4.mt-6.mb-3.md:mb-4.cards-flip-item.last:mb-0::text"
         )
         property_loader.add_css(
-            "airline_company", "block text-1 mt-1 md:text-2 font-medium airline-name text-grays-500 mx-2t"
+            "airline_company", "strong.block.text-1.mt-1.md:text-2.font-medium.airline-name.text-grays-500.mx-2[data-v-68766d8c]::text"
         )
         property_loader.add_css(
-            "landing_date", "text-5 md:text-6"
+            "landing_date", "strong.text-5.md:text-6::text"
         )
         property_loader.add_css(
-            "flying_date", "text-5 md:text-6"
+            "flying_date", "strong.text-5.md:text-6[style=margin-left: 0.5rem;]::text"
         )        
 
         yield property_loader.load_item()
