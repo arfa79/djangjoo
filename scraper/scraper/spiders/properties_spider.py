@@ -16,7 +16,7 @@ class PropertiesSpider(CrawlSpider):
 
     rules = (
         Rule(
-            LinkExtractor(allow=("")),
+            LinkExtractor(allow=("alibaba.ir/flights")),
             callback="parse_property",
             follow=True,
         ),
