@@ -29,7 +29,7 @@ def scrape_tickets(request):
                 category=category,
 
                 # Save the scraped data to the Ticket model
-                ticket = Ticket.objects.create(
+                ticket = Property.objects.create(
                     start_location=start_location,
                     destination_location=destination_location,
                     flying_date=flying_date,
@@ -42,7 +42,7 @@ def scrape_tickets(request):
                 ticket.save()
 
                 # Query the database to retrieve the tickets
-                tickets = Ticket.objects.all()
+                tickets = Property.objects.all()
 
                 return render(request, 'tickets_table.html', {'tickets': tickets})
 
