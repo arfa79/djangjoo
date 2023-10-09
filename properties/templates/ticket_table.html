@@ -1,0 +1,25 @@
+<form method="post">
+    {% csrf_token %}
+    <!-- Include form fields for start_location, destination, and day -->
+    <input type="text" name="start_location" placeholder="start_location">
+    <input type="text" name="destination_location" placeholder="destination_location">
+    <input type="date" name="day">
+    <button type="submit">Search</button>
+</form>
+
+<!-- Display the scraped data in a table -->
+<table>
+    <!-- Use Django template tags to loop through and display the data -->
+    {% for ticket in tickets %}
+        <tr>
+            <td>{{ ticket.start_location }}</td>
+            <td>{{ ticket.destination_location }}</td>
+            <td>{{ ticket.flying_date }}</td>
+            <td>{{ ticket.landing_date }}</td>
+            <td>{{ ticket.airline_company }}</td>
+            <td>{{ ticket.status }}</td>
+            <td>{{ ticket.category }}</td>
+            <td>{{ ticket.price }}</td>
+        </tr>
+    {% endfor %}
+</table>

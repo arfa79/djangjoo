@@ -42,7 +42,7 @@ class PropertiesSpider(CrawlSpider):
             "category", "available-card__content"
         )
         property_loader.add_css(
-            "airline_company", "available-card__content"
+            "airline_company", "block text-1 mt-1 md:text-2 font-medium airline-name text-grays-500 mx-2t"
         )
         property_loader.add_css(
             "landing_date", "available-card__content"
