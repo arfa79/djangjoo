@@ -27,28 +27,28 @@ class PropertiesSpider(CrawlSpider):
         property_loader.default_output_processor = TakeFirst()
 
         property_loader.add_css(
-            "price", "available-card__content"
+            "price", "text-secondary-400"
         )
         property_loader.add_css(
-            "start_location", "available-card__content"
+            "start_location", "margin-left: 0.5rem"
         )
         property_loader.add_css(
-            "landing_location", "available-card__content"
+            "landing_location", "margin-left: 0.5rem"
         )
         property_loader.add_css(
-            "status", "available-card__content"
+            "status", "flex flex-col text-2 mt-1 text-danger-400"
         )
         property_loader.add_css(
-            "category", "available-card__content"
+            "category", "a-card available-card is-disabled flex mb-3 md:mb-4 cards-flip-item last:mb-0"
         )
         property_loader.add_css(
             "airline_company", "block text-1 mt-1 md:text-2 font-medium airline-name text-grays-500 mx-2t"
         )
         property_loader.add_css(
-            "landing_date", "available-card__content"
+            "landing_date", "text-5 md:text-6"
         )
         property_loader.add_css(
-            "flying_date", "available-card__content"
+            "flying_date", "text-5 md:text-6"
         )        
 
         yield property_loader.load_item()
