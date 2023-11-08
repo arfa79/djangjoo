@@ -11,7 +11,7 @@ class PropertiesSpider(CrawlSpider):
     name = "properties"
     allowed_domains = ["https://www.alibaba.ir/"]
     start_urls = [
-        "https://www.alibaba.ir/flights/THR-MHD?adult=1&child=0&infant=0&departing=1402-08-01"
+        "https://ws.alibaba.ir/api/v1/flights/domestic/available"
     ]
 
     rules = (

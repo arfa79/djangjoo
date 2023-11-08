@@ -1,0 +1,13 @@
+# Exclude virtual environment
+newvenv/
+
+# Exclude Python bytecode files
+__pycache__/
+
+# Exclude editor/IDE specific files and directories
+.vscode/
+.idea/
+
+# Exclude operating system-specific files
+.DS_Store
+Thumbs.db
